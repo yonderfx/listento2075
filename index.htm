@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Listen to 2075</title>
+<link href='http://fonts.googleapis.com/css?family=Exo+2:600' rel='stylesheet' type='text/css'>
+    <style>
+        html {
+            height: 100%;
+        }
+        body {
+            overflow: none;
+            background: url('./2075.jpg');
+            background-size: cover;
+            color: white;
+            font-family: 'Exo 2', sans-serif;
+
+            padding: 0;
+            margin: 0;
+        }
+
+        h1 {
+            margin: 0;
+            display: inline;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+            font-size: 5cm;
+            padding: 0;
+            -moz-transition: color 0.6s;
+            -webkit-transition: color 0.6s;
+            transition: color 0.6s;
+        }
+
+        a:hover {
+            color: #999;
+        }
+
+        .top {
+            background: rgba(0, 0, 0, 0.6);
+            font-size: 2cm;
+            font-style: italic;
+            text-transform: uppercase;
+        }
+
+        .sink {
+            position: fixed;
+            left: 0cm;
+            bottom: 0cm;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+        .sink a {
+            font-size: 0.5cm;
+        }
+
+        .sink, h2, .sink ul a {
+            font-size: 0.3cm;
+        }
+
+        .sink h2, .sink li, .sink ul {
+            display: inline;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+    </style>
+</head>
+<body>
+<div class="top">
+<h1>Listen to 2075</h1>
+<a href="#" id="toggle-playback">&#9654;</a>
+</div>
+<iframe id="yt" width="0" height="0" src="https://www.youtube.com/embed/I4sGR3TeXto?loop=1&amp;autoplay=1&amp;playlist=I4sGR3TeXto&amp;enablejsapi=1" frameborder="0" allowfullscreen></iframe>
+<iframe id="sc" width="0" height="0" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/57876843&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
+<div class="sink">
+<a href="http://yonderfx.com/listento2075?pk_campaign=listento2075">brought to you by yonderfx.com, the ambience sound generator</a><br/>
+<h2>third party attribution:</h2>
+<ul>
+    <li><a href="https://soundcloud.com/dominik-seemann/sets/listento2075">playlist on soundcloud;</a></li>
+    <li><a href="https://www.youtube.com/watch?v=I4sGR3TeXto">ambience track on youtube;</a></li>
+    <li><a href="http://commons.wikimedia.org/wiki/File:Hong_Kong_Skyline_-_Dec_2007_edit1.jpg">background by Diliff on wikipedia;</a></li>
+</ul>
+<div>
+<script src="https://w.soundcloud.com/player/api.js"></script>
+<script src="http://www.youtube.com/player_api"></script>
+<script>
+    var sc_frame = document.getElementById('sc');
+    var sc_player = SC.Widget(sc_frame);
+    var yt_player;
+    var is_playing = true;
+
+    sc_player.bind(SC.Widget.Events.READY, function() {
+        sc_player.setVolume(0.65);
+        sc_player.play();
+    });
+
+    function onYouTubePlayerAPIReady() {
+        yt_player = new YT.Player('yt');
+    }
+
+    function toggle() {
+        if(is_playing) {
+            sc_player.pause();
+            yt_player.pauseVideo();
+        } else {
+            sc_player.play();
+            yt_player.playVideo();
+        }
+        is_playing = !is_playing;
+    }
+
+    var toggle_button = document.getElementById('toggle-playback');
+    toggle_button.onclick = toggle;
+</script>
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//5in4.de/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 9]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//5in4.de/piwik/piwik.php?idsite=9" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code -->
+
+</body>
+</html>
